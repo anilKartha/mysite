@@ -1,0 +1,32 @@
+---
+layout: demi-width
+title: anthologies
+---
+     <h1 class="content-listing-header sans">Anthologies</h1>
+     <hr class="slender">
+
+	{% assign numcols =  4 %}
+	{% assign numitems = site.data.anthos | size   %}
+	{% assign quo1 =  numitems | divided_by: numcols  %}
+	{% assign numrows =  quo1 | ceil    %}
+	{% assign anumrows =  numrows | minus: 1 %}
+	
+	<table class="mytable">
+	<tbody>
+	{% for i in (0..anumrows) %}
+		<tr>
+		{% assign cntr = i | times: numcols %} 
+		{% for j in (0..3) %}
+		<th style="text-align: center">
+			{% assign idx = cntr | plus: j %} 
+			{% assign item = site.data.anthos[idx] %}
+			{% unless item.exclude %}
+			<a href="{{ item.url }}" title="{{ item.friendly }}"><img src ="{{ item.cover | prepend: site.baseurl }}" title="{{ item.friendly }}"> 
+</a>
+			{% endunless %}
+		</th>
+		{% endfor %}
+		</tr>
+	{% endfor %}
+	</tbody>
+	</table>

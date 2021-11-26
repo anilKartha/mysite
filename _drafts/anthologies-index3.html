@@ -1,0 +1,85 @@
+---
+layout: demi-width
+title: anthologies
+---
+     <h1 class="content-listing-header sans">Anthologies</h1>
+     <hr class="slender">
+
+	<div class="gallery-grid-container">
+  		<div class="gallery-panel1">
+<p style="width:100%">Eighteen anthologies. One hundred+ authors. Over fifteen countries. Hundred+ stories. Half a million words. The anthologies listed here span a multitude of genres, authors, countries, words and ideas. They also include some of my stories. Among other:</p>
+<br>
+Love In A Hot Climate. <em>Tel: Stories</em>, Jay Lake (ed).</br></br>
+Harris On The Pig: Practical Hints For The Pig Farmer. <em>Fom The Trenches</em>, J. H. Haines &amp; S. Henderson (eds).</br></br>
+Into The Night. <em>Apex Book Of World SF,</em>, Lavie Tidhar (ed). </br></br>
+Good Reasons. <em>Shrapnel Minima</em>, Prasanta Chakravarty(ed).</br></br>
+The Cure. <em>End Of The Road</em>, Jonathan Oliver(ed).</br>
+		</div>
+  		<div class="gallery-panel2">
+<p style="width:100%">Once, the cheapest way to buy a new book was to go to the publisher’s store or a bricks-and-mortar bookstore. That’s not true anymore. A lot of anthologies are one-off efforts and the publisher may no longer be around to offer deals. Even if they are, online bookstores often have better deals. So here’s a search-form that’ll find the best prices for each of the above volumes using the Bookfinder site. The cover-images are linked, where possible, to the publisher's sites.</p>
+<div class="formContentContainer">
+<form id="form" action="http://www.bookfinder.com/search/?" method="get" name="form" target="_blank">
+<fieldset><input name="st" type="hidden" value="xl" />
+<input name="ac" type="hidden" value="qr" /> <legend>Search Bookfinder.com</legend><label>Select a title: </label>
+<select name="isbn" id="isbn">
+<option value="1781086389&st=xl&ac=qr" selected>New Suns</option>
+<option value="0975590332&st=xl&ac=qr" selected>Year's Best SF</option>
+<option value="1534449590&st=xl&ac=qr" selected>Best American SF</option>
+<option value="9388322053&st=xl&ac=qr" selected>Gollancz Asian SF Vol. 1</option>
+<option value="9780857421876">Shrapnel Minima</option>
+<option value="1781081549&st=xl&ac=qr" selected>End Of The Road Antho</option>
+<option value="0975590332&st=xl&ac=qr" selected>TEL: Stories</option>
+<option value="100978958322&st=xl&ac=qr">From The Trenches</option>
+<option value="1411654382&st=xl&ac=qr">Time For Bedlam</option>
+<option value="0143330543&st=xl&ac=qr">Shockwave Antho</option>
+<option value="1-926633-06-7">Return Of The Raven</option>
+<option value="0982159633">Apex World SF</option>
+<option value="X">Tangled Bank Anthology</option>
+<option value="1848636199">Gothic Volume 5</option>
+<option value="9780989141147">Roasarium Mothership</option>
+</select>
+<p>&nbsp;</p>
+<button type="submit">Find Best Price</button></fieldset>
+</form>
+</div>
+
+		</div>
+	</div>
+     <hr class="slender">
+	<!-- div class="gallery-grid-container" -->
+	<div class="gal-wrapper" >
+	<!-- div class="gal-grid" -->
+	<div class="gal-grid" >
+
+	{% assign numitems = site.data.anthos | size   %}
+	{% assign numitems1 = numitems | minus: 1 %}
+<!-- 	{% assign numcols =  4 %}
+	{% assign quo1 =  numitems | divided_by: numcols  %}
+	{% assign numrows =  quo1 | ceil    %}
+	{% assign anumrows =  numrows | minus: 1 %}
+-->
+
+	{% for i in (0..numitems1) %}
+		<div class="gal-frame">
+		{% assign item = site.data.anthos[i] %}
+		{% unless item.exclude %}
+			<a href="{{ item.url }}" title="{{ item.friendly }}"><img src ="{{ item.cover | prepend: site.baseurl }}" class="gal-img" title="{{ item.friendly }}"></a>
+		{% endunless %}
+		</div>
+	{% endfor %}
+	
+<!-- 	{% for i in (0..anumrows) %}
+		{% assign cntr = i | times: numcols %} 
+		{% for j in (0..3) %}
+		<div class="gal-frame">
+			{% assign idx = cntr | plus: j %} 
+			{% assign item = site.data.anthos[idx] %}
+			{% unless item.exclude == true %}
+			<a href="{{ item.url }}" title="{{ item.friendly }}"><img src ="{{ item.cover | prepend: site.baseurl }}" class="gal-img" title="{{ item.friendly }}"></a>
+			{% endunless %}
+		</div>
+		{% endfor %}
+	{% endfor %}
+-->
+	</div><!-- end container -->
+	</div><!-- end wrapper-->

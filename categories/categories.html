@@ -1,0 +1,27 @@
+---
+layout: default
+permalink: /categories/
+title: Categories
+---
+ <h1 class="content-listing-header sans">Categories</h1>
+<!-- div class="content-listing-header" -->
+<div>
+    <ul class="tag-listing">
+        {% for category in site.categories %}
+        {% capture tag_name %}{{ category | first }}{% endcapture %}
+        <li class="tag-content-listing">
+            <h2> {{ tag_name | capitalize }}</h2>
+            <br>
+            {% for post in site.categories[tag_name] %}
+	    <div class="tag-article-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+            <div class="tag-article-content">
+		<a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }} </a>
+
+            </div>
+            {% endfor %}
+
+        </li>
+	<hr class="slender">
+        {% endfor %}
+    </ul>
+</div>

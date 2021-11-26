@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  {% if page.breath %}
+  	<body class="{{ page.breath }}" >
+  {% else %}
+  	<body >
+  {% endif %}
+	
+  {% include header.html %}
+
+<!-- The CSS grid that makes up the entirety of the hero image/banner image area -->
+	<div class="post-frame">
+		<div class="post-image-div">
+		{% if page.heroimage %}
+	       <img class="mybanner-image" src="{{ page.heroimage | prepend: site.baseurl }}" alt="{{ page.image-desc }}" />
+		{% endif %}
+		</div>
+		<div class="post-content-div">
+		{{ content }}
+		  <!-- p class="subtitle">{{ page.date | date: "%B %-d, %Y" }}</p>
+		  <article class="group {{ page.breath }}" >
+		      {{ content }}
+		  </article>
+		  -->
+		</div>
+	</div>
+	{% include print-footer.html %}
+	{% include footer.html %}
+	</body>
+</html>

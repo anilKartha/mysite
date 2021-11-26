@@ -1,0 +1,659 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+nav_exclude: true
+---
+/*****************************************************************************/
+/*
+/* Extensions to the Tufte Jekyll blog theme
+/* Based on Tufte CSS by Dave Liepmann ( https://github.com/edwardtufte/tufte-css )
+/*
+/* Almost entirely class definitions specific to my site. Has to be called after tufte.css
+/* Author: Anil Menon
+/*****************************************************************************/
+
+// Imports to create final
+
+@import "../_sass/fonts";
+@import "../_sass/settings";
+@import "../_sass/syntax-highlighting";
+
+
+header > nav  a{
+  color: $contrast-color;
+}
+
+header > nav a img{
+  height: 100%;
+  position: relative;
+  max-width: 100%;
+  top: -2rem;
+  left: 1rem;
+}
+
+.nav-parent {
+	display: grid;
+        width: 100%;
+	grid-template-columns: repeat(5, auto) 5fr;
+	grid-template-rows: 4rem 10px 3rem;
+	grid-column-gap: 40px;
+	grid-row-gap: 5px;
+}
+
+.logos1 { grid-area: 1 / 1 / 2 / 7; }
+.theseparator { grid-area: 2 / 1 / 3 / 7; }
+.theitem1 { grid-area: 3 / 1 / 4 / 2; }
+.theitem2 { grid-area: 3 / 2 / 4 / 3; }
+.theitem3 { grid-area: 3 / 3 / 4 / 4; }
+.theitem4 { grid-area: 3 / 4 / 4 / 5; }
+.theitem5 { grid-area: 3 / 5 / 4 / 6; }
+.thelastitem { grid-area: 3 / 6 / 4 / 7; }
+
+
+//#head {width: 87.5%; background: $bg-color url('../assets/img/dotsh.gif') 0 3rem repeat-x;}
+#head {width: $defaultwidth; background: $bg-color url('../assets/img/dotsh.gif') 0 0 repeat-x;}
+.theseparator {width: $defaultwidth; background: $bg-color url('../assets/img/dotsh.gif') 0 0 repeat-x;}
+
+div.logos1 {
+	float: left;
+	width: 250px;
+	margin-top: 2rem;
+	font-family: $body-font ;
+	//color: $contrast-color ;
+	color: $text-color ;
+	font-size: 1.438rem; // 7.2pt =  30 px 	
+	letter-spacing: 0.5rem; // 0.5 rem is apparently = 8 pixels
+}
+
+div.theitem1, div.theitem2, div.theitem3, div.theitem4, div.theitem5, div.thelastitem {
+	font-size: 1rem; // 7.2pt =  30 px 	
+	font-family: $sans-font;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding-top: 0.7rem;
+	margin-top: 0;
+	margin-bottom: 0;
+	vertical-align: baseline;
+}
+
+div.nav-parent a.active:before{ color:$focus-color;content:"\25CF";} // escaped unicode for dot 
+div.logos1 a { color: $text-color ;} 
+
+/* AM: this is used for page title: ARTICLES, ANTHOLOGIES, ABOUT, CONTACT etc. */
+h1.content-listing-header{
+  //font-style: normal;
+  //text-transform: uppercase;
+  //letter-spacing: 0.2rem;
+  //font-size: 1.8rem;
+  margin-top: 5rem;	//this put a space between the navbar and the page title
+  margin-bottom: 2rem;	//this put a space between the page title and the content
+}
+
+div.post-title-div {
+  margin-top: 5rem;	//this put a space between the navbar and the page title
+  margin-bottom: 2rem;	//this put a space between the page title and the content
+}
+
+/* This is for styling the Next and Prev links at the end of each post [ */
+div.singlepostnav{
+	box-sizing: inherit;
+}
+
+div.janusbox {
+	box-sizing: border-box;
+	width: 50%;
+	border: 5px solid red;
+	float: left;
+	font-size: 1.4rem; //same as that for p
+	line-height: 2rem; 
+        vertical-align: baseline;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+/* Based on: https://www.bytedude.com/jekyll-previous-and-next-posts/ [ */
+.post-nav {
+    /* Insert your custom styling here. Example:
+
+       font-size: 14px;
+       margin-bottom: 1em;
+    */
+    display: flex;
+    width: $defaultwidth; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: $basefontsize;
+    line-height: $baselineheight; 
+}
+
+div.rotateunicode {
+  width:10px;
+  transform: rotate(-90deg);
+  /* Legacy vendor prefixes that you probably don't need... */
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+  /* IE */
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+  -o-transform: rotate(-90deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.post-nav p {
+    /* flex-grow, flex-shrink, flex-basis */
+    flex: 1 1 0;
+    width: 45%;
+}
+.post-nav p:first-child {
+    padding-right: 0.5em;
+}
+.post-nav p:nth-child(2) {
+    padding-right: 0.5em;
+    text-align: center;
+}
+.post-nav p:last-child {
+    padding-left: 0.5em;
+    text-align: right;
+}
+
+/* ]] */
+
+/* AM: added chapter myepigraph  & blurb definitions [*/
+/* div.blurb { margin: 3.5636rem 0; } */
+div.blurb { margin: 1rem 0; }
+
+div.blurb > blockquote { margin-top: 1rem;
+                            margin-bottom: 1rem;
+                       }
+
+div.blurb > blockquote, div.epigraph > blockquote > p { font-style: italic; }
+
+div.blurb > blockquote > footer {  font-style: normal;
+                                      width: 85%;
+				   text-align: left;
+                                /*      padding-left: 2.5%;
+                                      padding-right: 2.5%; */
+                                      padding-top: 0;
+                                      margin-top: 0.4455rem;
+                                      margin-bottom: 1rem }
+
+div.blurb > blockquote > footer > cite { font-style: italic; }
+
+
+div.myepigraph { margin: 3.5636rem 0; }
+
+div.myepigraph > blockquote { margin-top: 3rem;
+                            margin-bottom: 3rem;
+                             }
+
+div.myepigraph > blockquote, div.myepigraph > blockquote > p { font-style: italic; }
+
+div.myepigraph > blockquote > footer {  font-style: normal;
+                                      width: 45%;
+                                      padding-left: 2.5%;
+                                      padding-right: 2.5%;
+                                      padding-top: 0;
+                                      margin-top: 0.4455rem;
+                                      margin-bottom: 3.1182rem }
+
+div.myepigraph > blockquote > footer > cite { font-style: italic; }
+
+/* AM: end chapter myepigraphs styles ]  */
+
+/* AM: This is used on the blog pages [ */
+
+img {
+  border: 2px solid white;
+}
+
+.heroimage {
+
+/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("photographer.jpg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/* ] */
+
+/* -- AM: Gallery Styling using grids. This is used only in "anthologies" page  
+
+.gallery-grid-container {
+  display: grid;
+  //grid-template-columns: auto auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  background-color: fffff8;
+  padding: 0px;
+}
+.gallery-grid-container > div {
+  text-align: left;
+}
+
+.gallery-panel1{
+  justify-items: left;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.gallery-panel2{
+  justify-items: left;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+*/
+
+.gallery-note{
+	width: $defaultwidth;
+	column-count: 2;
+	column-width: auto;
+  	column-gap: 20px;
+	padding: 0 0.625rem; /* = 0 10 px */
+}
+div.gallery-note {
+	font-size: $basefontsize;
+	line-height: $baselineheight;
+}
+
+/* First the Grid for the images */
+
+.gal-wrapper {
+	//width: 87.5%;
+	width: $defaultwidth;
+	max-width: $defaultwidth;
+	margin-left: 0;
+	margin-right: auto;
+	padding: 0 0;
+	box-sizing: border-box;
+}
+
+.gal-grid {
+	display: -ms-grid;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 20px;
+	//justify-items: center;
+	margin: 0;
+	padding: 0 0.625rem; /* = 0 10 px */
+}
+
+/* The Picture Frame */
+.gal-frame {
+	font-size: 1.2rem;
+	text-align: center;
+	/* background-color: #333; */
+	background-color: #fffff8;
+	color: #d9d9d9; 
+	padding: 0px;
+}
+
+/* The Images */
+.gal-img {
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	transition: opacity 0.25s ease-in-out;
+	border: 2px solid $contrast-color; 
+}
+
+.gal-img:hover {
+	opacity: .7;
+	border: 2px solid $focus-color; 
+}
+/* Based on Andy Bell's CSS Grid gallery wothout media queries */
+/* TODO: He has a section that deals with old browsers. Consider later */
+/* archive.hankchizljaw.com/wrote/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid*/ 
+/* -- AM: End of Gallery Styling section ] --*/
+
+/* AM [ */
+.home-page {
+  height: 100%;
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+/* AM For home page  */
+.bg  {
+  /* Full height */
+      background-image: url("../assets/img/AnilMenonSketch6.jpg");
+      height: 100%; 
+      width: 100%;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+/* Center and scale the image nicely */
+      background-position: center;
+}
+
+.bg2  {
+  /* Full height */
+      background-image: url("../assets/img/anilmenon/AnilMenonSketch7.jpg");
+      height: 100%; 
+      width: 100%;
+      display: block; // this is important
+/* Center and scale the image nicely */
+      overflow:hidden;
+      white-space: nowrap;
+
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+}
+/* ] */
+
+
+// AM: demi-width - larger than post-layout margins [ 
+body.demi-width, .content-listing, ul.content-listing li.listing{
+       width: 75%;
+       margin-left: auto;
+       margin-right: auto;
+       padding: 0% 5%;
+
+}
+.demi-width article p{
+  width: 75%;
+}
+// This is not a typo. demi-width != demiwidtha (Why?)
+.demiwidth, li.listing div{ max-width: 75%; } //AM: 
+// ]
+
+/* AM: fattywidth - larger than post-layout margins [  */
+// This class removes sidenotes and marginnotes
+body.fattywidth{ width: $defaultwidth;
+       margin-left: auto;
+       margin-right: auto;
+       padding-left: 12.5%;
+       font-family: $body-font;
+       background-color: $bg-color;
+       color: $text-color;
+       max-width: 1400px;
+}
+.fattywidth { .sidenote, .sidenote-number, .marginnote { display: none; } }
+.fattywidth, li.listing div{ max-width: 90%; }
+.fattywidth article p{
+  width: 80%;	//this can be tweaked as desired.
+}
+
+.fattywidth hr{
+	width: 80%;
+} 
+
+/* ] */
+
+/* AM  This is the styling for the contact form [ */
+/* AM  Responsive depends on % specs for width in input & textarea. */
+
+form {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  padding: 1em;
+  background: #f9f9f9; /* light aerogram blue */
+/*  border: 0px solid $border-color; */
+  margin: 0;
+  max-width: 60%;
+  padding-left: 1em; 
+  padding-right: 0em; 
+  padding-top: 1.5em; 
+  padding-bottom: 1.5em; 
+}
+form input {
+  background: #fff;
+  border: 1px solid #9c9c9c;
+}
+form button {
+     background: $bg-color;
+     color: $contrast-color;
+
+     border: 1pxsolid#eee;
+     border-color: $border-color;
+     width: 150px;
+     border-radius: 20px;
+     box-shadow: 5px5px5px#eee;
+     font: bold15px $sans-font;
+     text-shadow:none;
+
+
+}
+form button:hover {
+     background: $focus-color;
+     color: #a00000;
+
+     border:1pxsolid#eee;
+     border-radius:20px;
+     box-shadow:5px5px5px#eee;
+     text-shadow:none;
+}
+
+label {
+  padding: 0.5em 0.5em 0.5em 0;
+  font-size: 1.2rem; //same as body font
+  font-family: $code-font;
+}
+
+input {
+  /* padding: 0.7em; */
+  margin-bottom: 0.5rem;
+  width: 90%;
+}
+input:focus {
+  outline: 3px solid $focus-color;
+}
+input[type="text"]
+{
+    font-family: $code-font;
+    font-size: 1.2rem;
+}
+
+textarea{
+  width: 90%;
+  font-family: $code-font;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 400px) {
+  form {
+    grid-template-columns: 100px 1fr;
+    grid-gap: 10px;
+  }
+
+  label {
+    text-align: right;
+    grid-column: 1 / 2;
+  }
+
+  input,
+  button {
+    grid-column: 2 / 3;
+  }
+}
+
+/* ] */
+
+/* AM: This code is for styling book images on Novels page [ */
+
+.bookrack {
+  background-color: fffff8;
+  padding: 0px;
+// Needs to be more than the default separation because of nature of content
+  margin-top: 3rem;
+}
+
+.book-img-left {
+	float: left; 
+	margin-right: 15px;
+	margin-bottom: 5px;
+	padding: 0px;
+
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	transition: opacity 0.25s ease-in-out;
+	border: 2px solid $contrast-color; 
+}
+.book-img-left:hover {
+  opacity: .7;
+  border: 2px solid $focus-color; 
+}
+.book-img-right {
+	float: right; 
+	margin-left: 15px;
+	margin-bottom: 5px;
+	margin-right: 250px;
+	padding: 0px;
+
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	transition: opacity 0.25s ease-in-out;
+	border: 2px solid $contrast-color; 
+}
+
+/* The next three definitions are for displaying the book to the right */
+.book-img-right:hover {
+  opacity: .7;
+  border: 2px solid $focus-color; 
+}
+
+.blurb-container {
+ width: 100%;
+ height: auto;
+}
+.blurb-clearfix {
+ overflow: auto;}
+
+
+/* ] */
+
+/* AM [ The css styling for hero images on posts */
+// Styles for the top banner on the home page
+
+// Banner image (layer 1)
+.mybanner-image {
+  display: grid;	//TODO: Is this necessary?
+  min-width: 350px; // Do not resize to smaller than this.
+  width: 85%;	// We'll work with this for now. This gets the width right
+  height: 100%;
+  object-fit: cover; // Using this so the image can be any size and still look halfway decent.
+}
+
+/* AM ] */
+
+/* AM: This creates a full-width (banner-type) image [ */
+.post-frame{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 350px, 350px, 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 10px;
+}
+.post-title-div { grid-area: 1 / 1 / 2 / 2; }
+.post-image-div { grid-area: 2 / 1 / 3 / 2; }
+.post-content-div { grid-area: 3 / 1 / 4 / 2; }
+
+/* ] */
+
+/* Styling the category tags on each post [ */
+.mytag::before {
+	//  content: "#";
+}
+.mytag::after{
+	//  content: "#";
+}
+
+.mytag {
+
+	//  border: 1px solid $border-color;
+	//  border-radius: 5px;
+	display: inline-block;
+	padding: 0px 4px 0px 0px; //top, right, bottom, left
+	margin-right: 10px;
+	font-variant: small-caps;
+}
+
+
+
+ul.tag-listing {
+	width: 90%; //full-width
+}
+li.tag-content-listing {
+	padding: 0.5% 5%;
+}
+
+div .tag-article-content {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.4rem; //same as that for p
+	line-height: 2rem; 
+        vertical-align: baseline;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+div .tag-article-date {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.2rem; //same as that for p
+	line-height: 2rem; 
+        vertical-align: baseline;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* ] */
+
+/* Styling the blog post prev/next/arrownumber elements [ */
+.pagination {
+//  display: inline-block;
+  font-family: $body-font;
+  font-size: $body-font;
+  font-size: $basefontsize;
+  line-height: $baselineheight;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.pagination a {
+  color: $contrast-color;
+  float: left;
+  padding: 8px 20px;
+  text-decoration: none;
+  //transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: $focus-color;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+
+        background-color: $bg-focus-color;
+	color: $focus-color;
+}
+
+/* ]  */
+      
+/* AM: This turns the first letter into a dropped capital [*/
+.dcap {
+//    color: #9B3030;
+	display: inline;
+	float: left;
+	font-size: 4em;
+	line-height: 0.8em;
+	text-transform: uppercase;
+	font-weight: 400;
+	padding-left: 4px;
+}
+
+
+/* AM ] */
+

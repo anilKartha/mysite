@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- See if this layout can be made a special case of default as well. -->
+<!-- This should do it:                                                -->
+<!--    ---                                                            -->
+<!--    layout: default                                                -->
+<!--    breath: home-page                                              -->
+<!--    ---                                                            -->
+<!--    <div class="bg"></div>                                         -->
+<!--                                                                   -->
+<html>
+  {% include head.html %}
+  <body class="home-page">
+    <!-- div class="bg2"></div -->
+   <a href="{{ "/about/" | prepend: site.baseurl }}" class="bg2"></a>
+    {% include print-footer.html %}
+    {% include footer.html %}
+  </body>
+</html>

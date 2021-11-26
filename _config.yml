@@ -1,0 +1,30 @@
+baseurl: 
+title: Anil Menon's Website
+subtitle: Anil Menon's Website
+author: Anil Menon 
+simple_search: http://google.com/search
+description: Anil Menon's Website 
+name: tufte
+markdown: kramdown
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+permalink: /articles/:short_year/:title
+timezone: America/New_York
+excerpt_separator: <!--more-->  # you can specify your own separator, of course.
+exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'UploadToGithub.Rakefile', 'README.md']
+plugins: ['jekyll-paginate']
+paginate: 5
+paginate_path: "/essays/page:num/"
+post:
+  template: _post.txt
+  extension: md
+page:
+  template: _page.txt
+  extension: md
+editor: gvim
+git:
+  branch: main
+transfer:
+  command: rsync
+  settings: -av
+  source: _site/
+  destination: ~/anilKartha/anilmenon/

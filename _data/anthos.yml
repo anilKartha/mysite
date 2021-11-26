@@ -1,0 +1,72 @@
+- url: https://www.simonandschuster.com/books/New-Suns/Nisi-Shawl/9781781085783 
+  cover: /assets/img/wp-content/uploads/Newsuns1scaled.jpg 
+  friendly: New Suns 1 Anthology
+  exclude: false
+- url: https://www.simonandschuster.com/books/The-Years-Best-Science-Fiction-Vol-1/Jonathan-Strahan/9781534449596 
+  cover: /assets/img/wp-content/uploads/StrahanYBSF2021scaled.jpg 
+  friendly: Year's Best SF 2021 Anthology
+  exclude: false
+- url: https://www.hmhbooks.com/shop/books/The-Best-American-Science-Fiction-and-Fantasy-2021/9780358469964 
+  cover: /assets/img/wp-content/uploads/JohnJayAdamsYBSF2021scaled.jpg 
+  friendly: Year's Best SF 2021 Anthology
+  exclude: false
+- url: https://www.hachetteindia.com/TitleDetails.aspx?titleId=46653 
+  cover: /assets/img/wp-content/uploads/Gollancz1scaled.jpg 
+  friendly: Gollancz 1 Anthology
+  exclude: false
+- url: https://press.uchicago.edu/ucp/books/book/distributed/S/bo18089618.html 
+  cover: /assets/img/wp-content/uploads/shrapnelminima200b300.gif
+  friendly: Shrapnel Minima Anthology
+  exclude: false
+- url: https://www.goodreads.com/book/show/17571738-end-of-the-road
+  cover: /assets/img/wp-content/uploads/eotr200b300.gif
+  friendly: End of the Road Anthology
+  exclude: false
+- url: http://www.wheatlandpress.com/tel/index.html 
+  cover: /assets/img/wp-content/uploads/telstories200b300.gif 
+  friendly: Tel:Stories Anthology
+  exclude: false
+- url: http://shocklines.stores.yahoo.net/frtrbbyjhaan.html
+  cover: /assets/img/wp-content/uploads/fromthetrenches200b300.gif 
+  friendly: From The Trenches Anthology
+  exclude: false
+- url: http://www.amazon.com/Time-Bedlam-Saltboy-Bookmakers/dp/1411654382/ref=sr_1_1?ie=UTF8&qid=1241023075&sr=1-1
+  cover: /assets/img/wp-content/uploads/timeforbedlam200b300.gif
+  friendly: Time For Bedlam Anthology
+  exclude: false
+- url: http://www.penguinbooksindia.com/index.aspx 
+  cover: /assets/img/wp-content/uploads/shockwave200b300.gif
+  friendly: Shockwave Anthology
+  exclude: false
+- url: \#
+  cover: /assets/img/wp-content/uploads/returnraven200b300.gif 
+  friendly: Return Of The Raven Anthology 
+  exclude: false
+- url: http://www.apexbookcompany.com/cart.php?m=product_detail&#038;p=86 
+  cover: /assets/img/wp-content/uploads/apexbookofworldsf200b300.gif 
+  friendly: Apex World SF  Anthology
+  exclude: false
+- url: http://www.lulu.com/content/e-book/the-tangled-bank-love-wonder-and-evolution/8340048 
+  cover: /assets/img/wp-content/uploads/tangledbank200b300.gif 
+  friendly: Tangled Bank Anthology 
+  exclude: false
+- url: http://www.pspublishing.co.uk/exotic-gothic-5--volume-2-edited-by-danel-olson-1766-p.asp 
+  cover: /assets/img/wp-content/uploads/exgoth5v2.gif 
+  friendly: Gothic Vol. 5 Anthology
+  exclude: false
+- url: http://www.rosariumpublishing.com/rosarium-books-mothership.html 
+  cover: /assets/img/wp-content/uploads/mothership200b300.gif 
+  friendly: Mothership Anthology
+  exclude: false
+- url: http://tinyurl.com/qxr6lst 
+  cover: /assets/img/wp-content/uploads/musicofthestars-fc.gif 
+  friendly: Music of the Stars Anthology
+  exclude: false
+- url: http://tinyurl.com/qxr6lst 
+  cover: /assets/img/wp-content/uploads/sportantho200b300.gif 
+  friendly: Sports Stories Anthology
+  exclude: false
+- url: http://tinyurl.com/pq55mp 
+  cover: /assets/img/wp-content/uploads/whispers200b300.gif
+  friendly: In The Classroom Anthology
+  exclude: true

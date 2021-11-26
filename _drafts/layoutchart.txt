@@ -1,0 +1,51 @@
+
+
+
+	Layout chart:
+
+
+                              default
+                                  |
+                                  |-----------------------------|
+                                  |                         itemdetails
+                                  |                             |
+                                  |                             |
+                                  |                       |-------------|
+                                  |                       |             |
+                                  |                       |             |
+                                  |                    fancypost   bookdetails     homepage  
+                                  |                       |             |              |
+                                  |                       |             |              |
+                                  |                       |             |              |
+    |-------|-------------|----------|---------|          |             |              |
+    |       |             |          |         |          |             |              |
+    |       |             |          |         |          |             |              |
+ works	anthologies 	about      contact   Categories article      Novel detail   index.html
+                                                        X mixed      pages         special
+
+
+Key:
+  demi-width: dw
+  full-width: fw
+  fattywidth: faw
+  default: preferred
+  X -- need to cut dependency (i.e. make changes to files)
+
+
+default.html
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  {% if page.breath %}
+  	<body class="{{ page.breath }}" >
+  {% else %}
+  	<body >
+  {% endif %}
+  {% include header.html %}
+    <article class="group">
+      {{ content }}
+    </article>
+  {% include print-footer.html %}
+  {% include footer.html %}
+  </body>
+</html>

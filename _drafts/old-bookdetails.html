@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	{% include head.html %}
+	{% if page.breath %}
+  		<body class="{{ page.breath }}" >
+	{% else %}
+		<body >
+	{% endif %}
+	
+	{% include header.html %}
+
+	{% if page.heroimage %}
+		<img alt="{{ page.image-desc }}" src="{{ page.heroimage | prepend: site.baseurl }}" />
+	{% endif %}
+	<article class="group {{ page.breath }}">
+		{{ content }}
+	</article>
+	{% include print-footer.html %}
+	{% include footer.html %}
+	</body>
+</html>

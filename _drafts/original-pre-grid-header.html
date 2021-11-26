@@ -1,0 +1,20 @@
+<!--- Header and nav template site-wide -->
+<header>
+    <nav class="group" id="head">
+    <div id="logo">
+	<a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/anilmenon/anilmenonlogo1-bold-active.png"  width="250" height="40" alt="Go to coverpage"></a> 
+    </div>
+    <div id="nav1">
+	<!-- a href="{{site.baseurl}}/"><span class="badge">Anil Menon</span><a/ -->
+	{% for item in site.data.navigation %}
+		{% unless item.nav_exclude %}
+			{% if page.url == item.url %}
+			<a class="active" href="{{item.url | prepend: site.baseurl}}" class="active">{{item.title}}</a>
+			{% else %}
+			<a href="{{item.url | prepend: site.baseurl}}">{{item.title}}</a>
+			{% endif %}
+		{% endunless %}
+	{% endfor %}
+    <div>
+    </nav>
+</header>

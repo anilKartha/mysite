@@ -1,0 +1,51 @@
+---
+layout: default
+title: Essays
+---
+
+  <h1 class="content-listing-header sans">Essays</h1>
+  <ul class="content-listing ">
+    {% for post in paginator.posts %}      
+        <li class="listing">
+          <hr class="slender">
+          <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="contrast">{{ post.title }}</h3></a>
+          <br><span class="smaller">{{ post.date | date: "%B %-d, %Y" }}</span>  <br/>
+
+	{%- if post.categories.size > 0 -%}
+	{%- for tag in post.categories -%}
+		<span class="mytag smaller">&lfloor; {{ tag | downcase }} &rfloor; </span>
+	{%- endfor -%}
+	{%- endif -%}
+
+          <div>{{ post.excerpt | markdownify }}</div>
+        </li>
+    {% endfor %}
+  </ul>
+
+$$~$$
+{% if paginator.total_pages > 1 %}
+
+<div class="pagination">
+	{% if paginator.previous_page %}
+	<a href="{{ paginator.previous_page_path | relative_url }}">&#10094;</a>
+	{% else %}
+	    <a href="#">&#10094;</a>
+	{% endif %}
+	{% for page in (1..paginator.total_pages) %}
+	{% if page == paginator.page %}
+	    <a class="active" href="#">{{ page }}</a>
+	    {% elsif page == 1 %}
+	    <a href="{{ '/' | relative_url }}">{{ page }}</a>
+	    {% else %}
+	    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+	{% endif %}
+	{% endfor %}
+        {% if paginator.next_page %}
+    	<a href="{{ paginator.next_page_path | relative_url }}">&#10095;</a>
+  	{% else %}
+    	    <a href="#">&#10095;</a>
+         {% endif %}
+</div>
+{% endif %}
+$$~$$
+

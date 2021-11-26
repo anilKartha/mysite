@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  {% if page.breath %}
+  	<body class="{{ page.breath }}" >
+  {% else %}
+  	<body >
+  {% endif %}
+  {% include header.html %}
+    <article class="group">
+      {{ content }}
+    </article>
+  {% include print-footer.html %}
+  {% include footer.html %}
+  </body>
+</html>

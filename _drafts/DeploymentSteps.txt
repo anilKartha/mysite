@@ -1,0 +1,30 @@
+
+
+	0. Duplicate AnilMenonWebsitePrime and remane it as something else, say AMWCopy
+	1. cd  AMWCopy. 
+	2. bundle install
+	3. bundle exec jekll serve
+	Should be able to access the site locally
+
+	.................................
+
+	A. Steps to deploy AMWCopy to github
+
+	Create a new repo in GitHub. Make sure to leave the rep blank (no readme.md)
+
+	In _config.yml change baseurl to reflect the name of the GitHub repo.
+	For example, if it is anilKartha/anilmenon1
+		then baseurl: /anilmenon1
+ 
+	git init
+	git checkout -b gh-pages
+	git status
+	git add .
+	git commit -m "intial commit"
+	git remote add origin https://github.com/anilKartha/anilmenon.git
+		[git remote remove origin /if about throws an error]
+	git push origin gh-pages
+
+	B. Check ruby version.
+	C. gem pristine -all //this may not be required or work
+	D. jgd

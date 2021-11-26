@@ -1,0 +1,41 @@
+---
+layout: default
+title: anthologies
+---
+<h1 class="content-listing-header sans">Anthologies</h1>
+
+<!-- 
+     <div class="gallery-grid-container">
+  		<div class="gallery-panel1">
+<p style="width:100%">Eighteen anthologies. One hundred-plus authors from over fifteen countries. Hundred-plus stories. Half-a-million words. The anthologies listed here span a multitude of genres, authors, countries, words and ideas. They also include some of my stories. Getting hold of some of these anthos is a bit tricky. Once, the cheapest way to buy a new book was
+		</div>
+  		<div class="gallery-panel2">
+<p style="width:100%">to go to the publisher’s store or a bricks-and-mortar bookstore. That’s not true anymore. A lot of anthologies are one-off efforts and the publisher may no longer be around to offer deals. Even if they are, online bookstores often have better deals. I like to use the <a href="https://www.bookfinder.com/" target="_blank">Bookfinder site</a>. The cover-images are linked, where possible, to the publisher's sites.</p>
+
+		</div>
+	</div>
+-->
+     <div class="gallery-note">
+	
+	Eighteen anthologies. One hundred-plus authors from over fifteen countries. Hundred-plus stories. Half-a-million words. The anthologies listed here span a multitude of genres, authors, countries, words and ideas. They also include some of my stories. Getting hold of some of these anthos is a bit tricky.
+	Once,the cheapest way to buy a new book was to go to the publisher’s store or a bricks-and-mortar bookstore. That’s not true anymore. A lot of anthologies are one-off efforts and the publisher may no longer be around to offer deals. Even if they are, online bookstores often have better deals. I like to use the <a href="https://www.bookfinder.com/" target="_blank">Bookfinder site</a>. The cover-images are linked, where possible, to the publisher's sites.
+     </div>
+     <hr class="slender fattywidth">
+	<div class="gal-wrapper" >
+	<div class="gal-grid" >
+
+	{% assign numitems = site.data.anthos | size   %}
+	{% assign numitems1 = numitems | minus: 1 %}
+
+
+	{% for i in (0..numitems1) %}
+		<div class="gal-frame">
+		{% assign item = site.data.anthos[i] %}
+		{% unless item.exclude %}
+			<a href="{{ item.url }}" title="{{ item.friendly }}"><img src ="{{ item.cover | prepend: site.baseurl }}" class="gal-img" title="{{ item.friendly }}"></a>
+		{% endunless %}
+		</div>
+	{% endfor %}
+	
+	</div><!-- end wrapper-->
+	</div><!-- end container -->

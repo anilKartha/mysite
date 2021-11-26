@@ -1,0 +1,8 @@
+
+
+	TODO list:
+
+
+	-- Each individual post should also have navigation
+
+
